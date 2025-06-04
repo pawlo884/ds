@@ -16821,3 +16821,6100 @@ result = {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/z
 2025-06-02 11:56:20 [INFO] Executing Step 7: ResultValidation
 2025-06-02 11:56:20 [INFO] Answer: {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/zad2/exports/charts/temp_chart.png'}
 2025-06-02 11:56:20 [INFO] Executing Step 8: ResultParsing
+2025-06-04 11:54:07 [INFO] Question: narysuj histogram dla kolumny tempo, do not print the result, do not print the result
+2025-06-04 11:54:08 [INFO] Running PandasAI with openai LLM...
+2025-06-04 11:54:08 [INFO] Prompt ID: 77397c18-06c0-4cd5-b81b-fa6787006f98
+2025-06-04 11:54:08 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-06-04 11:54:08 [INFO] Executing Step 0: ValidatePipelineInput
+2025-06-04 11:54:08 [INFO] Executing Step 1: CacheLookup
+2025-06-04 11:54:08 [INFO] Executing Step 2: PromptGeneration
+2025-06-04 11:54:08 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj histogram dla kolumny tempo, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-06-04 11:54:08 [INFO] Executing Step 3: CodeGenerator
+2025-06-04 11:54:28 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-04 11:54:28 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj histogram dla kolumny tempo, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-06-04 11:54:28 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming dfs is already declared and contains the DataFrame
+df = dfs[0]
+
+# Drop NaN values from the 'Tempo' column
+tempo_data = df['Tempo'].dropna()
+
+# Create a histogram for the 'Tempo' column
+plt.figure(figsize=(10, 6))
+plt.hist(tempo_data, bins=30, color='blue', edgecolor='black')
+plt.title('Histogram of Tempo')
+plt.xlabel('Tempo (minutes per kilometer)')
+plt.ylabel('Frequency')
+
+# Save the plot as a PNG file
+plt.savefig('tempo_histogram.png')
+plt.close() # HACK
+
+# Declare result var
+result = { "type": "plot", "value": "tempo_histogram.png" }
+            ```
+            
+2025-06-04 11:54:28 [INFO] Executing Step 4: CachePopulation
+2025-06-04 11:54:28 [INFO] Executing Step 5: CodeCleaning
+2025-06-04 11:54:28 [INFO] Saving charts to e:\OneDrive\Pulpit\kodowanie\datascientist\exports\charts\temp_chart.png
+2025-06-04 11:54:28 [INFO] 
+Code running:
+```
+df = dfs[0]
+tempo_data = df['Tempo'].dropna()
+plt.figure(figsize=(10, 6))
+plt.hist(tempo_data, bins=30, color='blue', edgecolor='black')
+plt.title('Histogram of Tempo')
+plt.xlabel('Tempo (minutes per kilometer)')
+plt.ylabel('Frequency')
+plt.savefig('e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png')
+plt.close()
+result = {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+        ```
+2025-06-04 11:54:28 [INFO] Executing Step 6: CodeExecution
+2025-06-04 11:54:29 [INFO] Executing Step 7: ResultValidation
+2025-06-04 11:54:29 [INFO] Answer: {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+2025-06-04 11:54:29 [INFO] Executing Step 8: ResultParsing
+2025-06-04 11:54:31 [INFO] Question: narysuj histogram dla tempo stabilnoœæ, do not print the result, do not print the result
+2025-06-04 11:54:31 [INFO] Running PandasAI with openai LLM...
+2025-06-04 11:54:31 [INFO] Prompt ID: 9d63950e-c907-44a3-be42-861d50782cf1
+2025-06-04 11:54:31 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-06-04 11:54:31 [INFO] Executing Step 0: ValidatePipelineInput
+2025-06-04 11:54:31 [INFO] Executing Step 1: CacheLookup
+2025-06-04 11:54:31 [INFO] Executing Step 2: PromptGeneration
+2025-06-04 11:54:31 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj histogram dla tempo stabilnoœæ, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-06-04 11:54:31 [INFO] Executing Step 3: CodeGenerator
+2025-06-04 11:54:47 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-04 11:54:47 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj histogram dla tempo stabilnoœæ, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-06-04 11:54:47 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming dfs is already declared and contains the DataFrame
+df = dfs[0]
+
+# Plotting the histogram for "Tempo Stabilnoœæ"
+plt.figure(figsize=(10, 6))
+plt.hist(df['Tempo Stabilnoœæ'].dropna(), bins=30, color='blue', edgecolor='black')
+plt.title('Histogram of Tempo Stabilnoœæ')
+plt.xlabel('Tempo Stabilnoœæ')
+plt.ylabel('Frequency')
+
+# Save the plot as a PNG file
+plt.savefig('tempo_stabilnosc_histogram.png')
+plt.close() # HACK
+plt.close()
+
+# Declare result var
+result = { "type": "plot", "value": "tempo_stabilnosc_histogram.png" }
+            ```
+            
+2025-06-04 11:54:47 [INFO] Executing Step 4: CachePopulation
+2025-06-04 11:54:47 [INFO] Executing Step 5: CodeCleaning
+2025-06-04 11:54:47 [INFO] Saving charts to e:\OneDrive\Pulpit\kodowanie\datascientist\exports\charts\temp_chart.png
+2025-06-04 11:54:47 [INFO] 
+Code running:
+```
+df = dfs[0]
+plt.figure(figsize=(10, 6))
+plt.hist(df['Tempo Stabilnoœæ'].dropna(), bins=30, color='blue', edgecolor='black')
+plt.title('Histogram of Tempo Stabilnoœæ')
+plt.xlabel('Tempo Stabilnoœæ')
+plt.ylabel('Frequency')
+plt.savefig('e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png')
+plt.close()
+plt.close()
+result = {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+        ```
+2025-06-04 11:54:47 [INFO] Executing Step 6: CodeExecution
+2025-06-04 11:54:47 [INFO] Executing Step 7: ResultValidation
+2025-06-04 11:54:47 [INFO] Answer: {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+2025-06-04 11:54:48 [INFO] Executing Step 8: ResultParsing
+2025-06-04 11:54:51 [INFO] Question: narysuj barplot dla "Imiê", posortuj wed³ug najczêœciej wystêpuj¹cych imion, poka¿ max 20, ogranicz siê do mê¿czyzn, do not print the result, do not print the result
+2025-06-04 11:54:51 [INFO] Running PandasAI with openai LLM...
+2025-06-04 11:54:51 [INFO] Prompt ID: 2340e14d-936c-4ff2-bc48-cd3746b40884
+2025-06-04 11:54:51 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-06-04 11:54:51 [INFO] Executing Step 0: ValidatePipelineInput
+2025-06-04 11:54:51 [INFO] Executing Step 1: CacheLookup
+2025-06-04 11:54:51 [INFO] Executing Step 2: PromptGeneration
+2025-06-04 11:54:51 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj barplot dla "Imiê", posortuj wed³ug najczêœciej wystêpuj¹cych imion, poka¿ max 20, ogranicz siê do mê¿czyzn, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-06-04 11:54:51 [INFO] Executing Step 3: CodeGenerator
+2025-06-04 11:55:04 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-04 11:55:04 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj barplot dla "Imiê", posortuj wed³ug najczêœciej wystêpuj¹cych imion, poka¿ max 20, ogranicz siê do mê¿czyzn, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-06-04 11:55:04 [INFO] Code generated:
+            ```
+            # Import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming dfs is already defined and contains the DataFrame
+df = dfs[0]
+
+# Filter the DataFrame to include only male participants
+male_df = df[df['P³eæ'] == 'M']
+
+# Count the occurrences of each name
+name_counts = male_df['Imiê'].value_counts()
+
+# Select the top 20 most common names
+top_20_names = name_counts.head(20)
+
+# Plot the bar chart
+plt.figure(figsize=(10, 6))
+top_20_names.plot(kind='bar')
+plt.title('Top 20 Most Common Male Names')
+plt.xlabel('Name')
+plt.ylabel('Frequency')
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Save the plot as a PNG file
+plt.savefig('top_20_male_names.png')
+plt.close() # HACK
+
+# Declare result variable
+result = { "type": "plot", "value": "top_20_male_names.png" }
+            ```
+            
+2025-06-04 11:55:04 [INFO] Executing Step 4: CachePopulation
+2025-06-04 11:55:04 [INFO] Executing Step 5: CodeCleaning
+2025-06-04 11:55:04 [INFO] Saving charts to e:\OneDrive\Pulpit\kodowanie\datascientist\exports\charts\temp_chart.png
+2025-06-04 11:55:04 [INFO] 
+Code running:
+```
+df = dfs[0]
+male_df = df[df['P³eæ'] == 'M']
+name_counts = male_df['Imiê'].value_counts()
+top_20_names = name_counts.head(20)
+plt.figure(figsize=(10, 6))
+top_20_names.plot(kind='bar')
+plt.title('Top 20 Most Common Male Names')
+plt.xlabel('Name')
+plt.ylabel('Frequency')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig('e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png')
+plt.close()
+result = {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+        ```
+2025-06-04 11:55:04 [INFO] Executing Step 6: CodeExecution
+2025-06-04 11:55:05 [INFO] Executing Step 7: ResultValidation
+2025-06-04 11:55:05 [INFO] Answer: {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+2025-06-04 11:55:05 [INFO] Executing Step 8: ResultParsing
+2025-06-04 11:55:08 [INFO] Question: narysuj barplot dla "Imiê", posortuj wed³ug najczêœciej wystêpuj¹cych imion, poka¿ max 20, ogranicz siê do kobiet, do not print the result, do not print the result
+2025-06-04 11:55:08 [INFO] Running PandasAI with openai LLM...
+2025-06-04 11:55:08 [INFO] Prompt ID: 41299cae-0cac-4a92-9aeb-355d423530f0
+2025-06-04 11:55:08 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-06-04 11:55:08 [INFO] Executing Step 0: ValidatePipelineInput
+2025-06-04 11:55:08 [INFO] Executing Step 1: CacheLookup
+2025-06-04 11:55:09 [INFO] Executing Step 2: PromptGeneration
+2025-06-04 11:55:09 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj barplot dla "Imiê", posortuj wed³ug najczêœciej wystêpuj¹cych imion, poka¿ max 20, ogranicz siê do kobiet, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-06-04 11:55:09 [INFO] Executing Step 3: CodeGenerator
+2025-06-04 11:55:21 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-04 11:55:21 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj barplot dla "Imiê", posortuj wed³ug najczêœciej wystêpuj¹cych imion, poka¿ max 20, ogranicz siê do kobiet, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-06-04 11:55:21 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming dfs is already defined and contains the DataFrame
+df = dfs[0]
+
+# Filter the DataFrame to include only women
+female_df = df[df['P³eæ'] == 'K']
+
+# Count the occurrences of each name
+name_counts = female_df['Imiê'].value_counts()
+
+# Select the top 20 most common names
+top_20_names = name_counts.head(20)
+
+# Plot the bar chart
+plt.figure(figsize=(10, 6))
+top_20_names.plot(kind='bar', color='skyblue')
+plt.title('Top 20 Most Common Female Names')
+plt.xlabel('Name')
+plt.ylabel('Frequency')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+
+# Save the plot as a PNG file
+plt.savefig('female_names_barplot.png')
+plt.close() # HACK
+
+# Declare result variable
+result = { "type": "plot", "value": "female_names_barplot.png" }
+            ```
+            
+2025-06-04 11:55:21 [INFO] Executing Step 4: CachePopulation
+2025-06-04 11:55:22 [INFO] Executing Step 5: CodeCleaning
+2025-06-04 11:55:22 [INFO] Saving charts to e:\OneDrive\Pulpit\kodowanie\datascientist\exports\charts\temp_chart.png
+2025-06-04 11:55:22 [INFO] 
+Code running:
+```
+df = dfs[0]
+female_df = df[df['P³eæ'] == 'K']
+name_counts = female_df['Imiê'].value_counts()
+top_20_names = name_counts.head(20)
+plt.figure(figsize=(10, 6))
+top_20_names.plot(kind='bar', color='skyblue')
+plt.title('Top 20 Most Common Female Names')
+plt.xlabel('Name')
+plt.ylabel('Frequency')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.savefig('e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png')
+plt.close()
+result = {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+        ```
+2025-06-04 11:55:22 [INFO] Executing Step 6: CodeExecution
+2025-06-04 11:55:22 [INFO] Executing Step 7: ResultValidation
+2025-06-04 11:55:22 [INFO] Answer: {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+2025-06-04 11:55:22 [INFO] Executing Step 8: ResultParsing
+2025-06-04 11:55:44 [INFO] Question: narysuj barplot dla 'kraj', wyœwietl liczbê Osób, do not print the result, do not print the result
+2025-06-04 11:55:44 [INFO] Running PandasAI with openai LLM...
+2025-06-04 11:55:44 [INFO] Prompt ID: 0d028ad5-136f-4e96-8d85-b0793e589baa
+2025-06-04 11:55:44 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-06-04 11:55:44 [INFO] Executing Step 0: ValidatePipelineInput
+2025-06-04 11:55:44 [INFO] Executing Step 1: CacheLookup
+2025-06-04 11:55:44 [INFO] Executing Step 2: PromptGeneration
+2025-06-04 11:55:44 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj barplot dla 'kraj', wyœwietl liczbê Osób, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-06-04 11:55:44 [INFO] Executing Step 3: CodeGenerator
+2025-06-04 11:55:56 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-04 11:55:56 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj barplot dla 'kraj', wyœwietl liczbê Osób, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-06-04 11:55:56 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming dfs is already defined and contains the DataFrame
+df = dfs[0]
+
+# Drop NaN values in the 'Kraj' column
+df_kraj = df.dropna(subset=['Kraj'])
+
+# Count the occurrences of each country
+country_counts = df_kraj['Kraj'].value_counts()
+
+# Create a bar plot
+plt.figure(figsize=(10, 6))
+country_counts.plot(kind='bar')
+plt.title('Liczba Osób z Ka¿dego Kraju')
+plt.xlabel('Kraj')
+plt.ylabel('Liczba Osób')
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Save the plot as a PNG file
+plot_filename = "country_barplot.png"
+plt.savefig(plot_filename)
+plt.close() # HACK
+
+# Declare result variable
+result = { "type": "plot", "value": plot_filename }
+            ```
+            
+2025-06-04 11:55:56 [INFO] Executing Step 4: CachePopulation
+2025-06-04 11:55:56 [INFO] Executing Step 5: CodeCleaning
+2025-06-04 11:55:56 [INFO] Saving charts to e:\OneDrive\Pulpit\kodowanie\datascientist\exports\charts\temp_chart.png
+2025-06-04 11:55:56 [INFO] 
+Code running:
+```
+df = dfs[0]
+df_kraj = df.dropna(subset=['Kraj'])
+country_counts = df_kraj['Kraj'].value_counts()
+plt.figure(figsize=(10, 6))
+country_counts.plot(kind='bar')
+plt.title('Liczba Osób z Ka¿dego Kraju')
+plt.xlabel('Kraj')
+plt.ylabel('Liczba Osób')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plot_filename = 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'
+plt.savefig(plot_filename)
+plt.close()
+result = {'type': 'plot', 'value': plot_filename}
+        ```
+2025-06-04 11:55:56 [INFO] Executing Step 6: CodeExecution
+2025-06-04 11:55:56 [INFO] Executing Step 7: ResultValidation
+2025-06-04 11:55:56 [INFO] Answer: {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+2025-06-04 11:55:56 [INFO] Executing Step 8: ResultParsing
+2025-06-04 11:56:08 [INFO] Question: narysuj barplot dla 'kraj', wyœwietl liczbê Osób nad s³upkiem, do not print the result, do not print the result
+2025-06-04 11:56:08 [INFO] Running PandasAI with openai LLM...
+2025-06-04 11:56:08 [INFO] Prompt ID: 60964b68-0f7c-4283-be54-3442f0ca35e1
+2025-06-04 11:56:09 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-06-04 11:56:09 [INFO] Executing Step 0: ValidatePipelineInput
+2025-06-04 11:56:09 [INFO] Executing Step 1: CacheLookup
+2025-06-04 11:56:09 [INFO] Executing Step 2: PromptGeneration
+2025-06-04 11:56:09 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj barplot dla 'kraj', wyœwietl liczbê Osób nad s³upkiem, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-06-04 11:56:09 [INFO] Executing Step 3: CodeGenerator
+2025-06-04 11:56:22 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-04 11:56:22 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj barplot dla 'kraj', wyœwietl liczbê Osób nad s³upkiem, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-06-04 11:56:22 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming dfs is already defined and contains the DataFrame
+df = dfs[0]
+
+# Drop NaN values in 'Kraj' column
+df = df.dropna(subset=['Kraj'])
+
+# Count occurrences of each country
+country_counts = df['Kraj'].value_counts()
+
+# Create the bar plot
+plt.figure(figsize=(10, 6))
+bars = plt.bar(country_counts.index, country_counts.values)
+
+# Add text annotations above the bars
+for bar in bars:
+    yval = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width()/2, yval, int(yval), va='bottom')  # va: vertical alignment
+
+plt.xlabel('Kraj')
+plt.ylabel('Liczba Osób')
+plt.title('Liczba Osób wed³ug Kraju')
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Save the plot as a PNG file
+plot_filename = "country_barplot.png"
+plt.savefig(plot_filename)
+plt.close() # HACK
+
+# Declare result variable
+result = { "type": "plot", "value": plot_filename }
+            ```
+            
+2025-06-04 11:56:22 [INFO] Executing Step 4: CachePopulation
+2025-06-04 11:56:22 [INFO] Executing Step 5: CodeCleaning
+2025-06-04 11:56:22 [INFO] Saving charts to e:\OneDrive\Pulpit\kodowanie\datascientist\exports\charts\temp_chart.png
+2025-06-04 11:56:23 [INFO] 
+Code running:
+```
+df = dfs[0]
+df = df.dropna(subset=['Kraj'])
+country_counts = df['Kraj'].value_counts()
+plt.figure(figsize=(10, 6))
+bars = plt.bar(country_counts.index, country_counts.values)
+for bar in bars:
+    yval = bar.get_height()
+    plt.text(bar.get_x() + bar.get_width() / 2, yval, int(yval), va='bottom')
+plt.xlabel('Kraj')
+plt.ylabel('Liczba Osób')
+plt.title('Liczba Osób wed³ug Kraju')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plot_filename = 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'
+plt.savefig(plot_filename)
+plt.close()
+result = {'type': 'plot', 'value': plot_filename}
+        ```
+2025-06-04 11:56:23 [INFO] Executing Step 6: CodeExecution
+2025-06-04 11:56:23 [INFO] Executing Step 7: ResultValidation
+2025-06-04 11:56:23 [INFO] Answer: {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+2025-06-04 11:56:23 [INFO] Executing Step 8: ResultParsing
+2025-06-04 11:56:37 [INFO] Question: narysuj barplot dla 'kategoria wiekowa', posortuj wed³ug najczêœciêj wystepuj¹cych, dodatkowo podziel na kobiety i mê¿czyzn, do not print the result, do not print the result
+2025-06-04 11:56:37 [INFO] Running PandasAI with openai LLM...
+2025-06-04 11:56:37 [INFO] Prompt ID: 2226e845-535e-4b3c-b0ed-c4fdde84929b
+2025-06-04 11:56:37 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-06-04 11:56:37 [INFO] Executing Step 0: ValidatePipelineInput
+2025-06-04 11:56:37 [INFO] Executing Step 1: CacheLookup
+2025-06-04 11:56:38 [INFO] Executing Step 2: PromptGeneration
+2025-06-04 11:56:38 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj barplot dla 'kategoria wiekowa', posortuj wed³ug najczêœciêj wystepuj¹cych, dodatkowo podziel na kobiety i mê¿czyzn, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-06-04 11:56:38 [INFO] Executing Step 3: CodeGenerator
+2025-06-04 11:56:56 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-04 11:56:56 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj barplot dla 'kategoria wiekowa', posortuj wed³ug najczêœciêj wystepuj¹cych, dodatkowo podziel na kobiety i mê¿czyzn, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-06-04 11:56:56 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming dfs is already defined and contains the DataFrame
+df = dfs[0]
+
+# Filter out rows with missing values in 'Kategoria wiekowa' and 'P³eæ'
+df_filtered = df.dropna(subset=['Kategoria wiekowa', 'P³eæ'])
+
+# Group by 'Kategoria wiekowa' and 'P³eæ', and count occurrences
+age_gender_counts = df_filtered.groupby(['Kategoria wiekowa', 'P³eæ']).size().unstack()
+
+# Sort by the total count of each age category
+age_gender_counts['Total'] = age_gender_counts.sum(axis=1)
+age_gender_counts = age_gender_counts.sort_values(by='Total', ascending=False).drop(columns='Total')
+
+# Plotting
+plt.figure(figsize=(12, 8))
+age_gender_counts.head(20).plot(kind='bar', stacked=True)
+plt.title('Top 20 Age Categories by Gender')
+plt.xlabel('Kategoria wiekowa')
+plt.ylabel('Liczba Osób')
+plt.xticks(rotation=45)
+plt.legend(title='P³eæ')
+plt.tight_layout()
+
+# Save the plot as a PNG file
+plt.savefig('age_category_gender_barplot.png')
+plt.close() # HACK
+
+# Declare result var
+result = { "type": "plot", "value": "age_category_gender_barplot.png" }
+            ```
+            
+2025-06-04 11:56:56 [INFO] Executing Step 4: CachePopulation
+2025-06-04 11:56:56 [INFO] Executing Step 5: CodeCleaning
+2025-06-04 11:56:56 [INFO] Saving charts to e:\OneDrive\Pulpit\kodowanie\datascientist\exports\charts\temp_chart.png
+2025-06-04 11:56:56 [INFO] 
+Code running:
+```
+df = dfs[0]
+df_filtered = df.dropna(subset=['Kategoria wiekowa', 'P³eæ'])
+age_gender_counts = df_filtered.groupby(['Kategoria wiekowa', 'P³eæ']).size().unstack()
+age_gender_counts['Total'] = age_gender_counts.sum(axis=1)
+age_gender_counts = age_gender_counts.sort_values(by='Total', ascending=False).drop(columns='Total')
+plt.figure(figsize=(12, 8))
+age_gender_counts.head(20).plot(kind='bar', stacked=True)
+plt.title('Top 20 Age Categories by Gender')
+plt.xlabel('Kategoria wiekowa')
+plt.ylabel('Liczba Osób')
+plt.xticks(rotation=45)
+plt.legend(title='P³eæ')
+plt.tight_layout()
+plt.savefig('e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png')
+plt.close()
+result = {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+        ```
+2025-06-04 11:56:56 [INFO] Executing Step 6: CodeExecution
+2025-06-04 11:56:56 [INFO] Executing Step 7: ResultValidation
+2025-06-04 11:56:56 [INFO] Answer: {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+2025-06-04 11:56:56 [INFO] Executing Step 8: ResultParsing
+2025-06-04 11:57:01 [INFO] Question: narysuj barplot dla 'Rocznik', dodatkowo podziel na kobiety i mê¿czyzn, posortuj wed³ug rocznika, do not print the result, do not print the result
+2025-06-04 11:57:01 [INFO] Running PandasAI with openai LLM...
+2025-06-04 11:57:01 [INFO] Prompt ID: e281a1ad-01b9-4988-8d72-7ea09c2d1faf
+2025-06-04 11:57:01 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-06-04 11:57:01 [INFO] Executing Step 0: ValidatePipelineInput
+2025-06-04 11:57:01 [INFO] Executing Step 1: CacheLookup
+2025-06-04 11:57:01 [INFO] Executing Step 2: PromptGeneration
+2025-06-04 11:57:01 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj barplot dla 'Rocznik', dodatkowo podziel na kobiety i mê¿czyzn, posortuj wed³ug rocznika, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-06-04 11:57:01 [INFO] Executing Step 3: CodeGenerator
+2025-06-04 11:57:19 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-04 11:57:19 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj barplot dla 'Rocznik', dodatkowo podziel na kobiety i mê¿czyzn, posortuj wed³ug rocznika, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-06-04 11:57:19 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load the DataFrame
+df = dfs[0]
+
+# Filter out rows with NaN in 'Rocznik' or 'P³eæ'
+df_filtered = df.dropna(subset=['Rocznik', 'P³eæ'])
+
+# Convert 'Rocznik' to integer for sorting
+df_filtered['Rocznik'] = df_filtered['Rocznik'].astype(int)
+
+# Group by 'Rocznik' and 'P³eæ', then count the number of occurrences
+grouped = df_filtered.groupby(['Rocznik', 'P³eæ']).size().unstack(fill_value=0)
+
+# Plot the bar chart
+fig, ax = plt.subplots(figsize=(12, 8))
+grouped.plot(kind='bar', stacked=True, ax=ax)
+plt.title('Liczba Osób wed³ug Rocznika i P³ci')
+plt.xlabel('Rocznik')
+plt.ylabel('Liczba Osób')
+plt.xticks(rotation=45)
+plt.legend(title='P³eæ')
+
+# Save the plot as a PNG file
+plt.savefig('rocznik_gender_barplot.png')
+plt.close() # HACK
+
+# Declare result var
+result = { "type": "plot", "value": "rocznik_gender_barplot.png" }
+            ```
+            
+2025-06-04 11:57:19 [INFO] Executing Step 4: CachePopulation
+2025-06-04 11:57:19 [INFO] Executing Step 5: CodeCleaning
+2025-06-04 11:57:19 [INFO] Saving charts to e:\OneDrive\Pulpit\kodowanie\datascientist\exports\charts\temp_chart.png
+2025-06-04 11:57:19 [INFO] 
+Code running:
+```
+df = dfs[0]
+df_filtered = df.dropna(subset=['Rocznik', 'P³eæ'])
+df_filtered['Rocznik'] = df_filtered['Rocznik'].astype(int)
+grouped = df_filtered.groupby(['Rocznik', 'P³eæ']).size().unstack(fill_value=0)
+fig, ax = plt.subplots(figsize=(12, 8))
+grouped.plot(kind='bar', stacked=True, ax=ax)
+plt.title('Liczba Osób wed³ug Rocznika i P³ci')
+plt.xlabel('Rocznik')
+plt.ylabel('Liczba Osób')
+plt.xticks(rotation=45)
+plt.legend(title='P³eæ')
+plt.savefig('e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png')
+plt.close()
+result = {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+        ```
+2025-06-04 11:57:19 [INFO] Executing Step 6: CodeExecution
+2025-06-04 11:57:20 [INFO] Executing Step 7: ResultValidation
+2025-06-04 11:57:20 [INFO] Answer: {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+2025-06-04 11:57:20 [INFO] Executing Step 8: ResultParsing
+2025-06-04 11:57:34 [INFO] Question: narysuj macierz korelacji, do not print the result, do not print the result
+2025-06-04 11:57:34 [INFO] Running PandasAI with openai LLM...
+2025-06-04 11:57:34 [INFO] Prompt ID: 47d94d34-00cb-4451-a393-05cd5d505252
+2025-06-04 11:57:35 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-06-04 11:57:35 [INFO] Executing Step 0: ValidatePipelineInput
+2025-06-04 11:57:35 [INFO] Executing Step 1: CacheLookup
+2025-06-04 11:57:35 [INFO] Executing Step 2: PromptGeneration
+2025-06-04 11:57:35 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj macierz korelacji, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-06-04 11:57:35 [INFO] Executing Step 3: CodeGenerator
+2025-06-04 11:57:48 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-04 11:57:48 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj macierz korelacji, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-06-04 11:57:48 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Assuming dfs is already declared and contains the DataFrame
+df = dfs[0]
+
+# Calculate the correlation matrix
+correlation_matrix = df.corr()
+
+# Plot the correlation matrix
+plt.figure(figsize=(12, 10))
+sns.heatmap(correlation_matrix, annot=True, fmt=".2f", cmap='coolwarm', cbar=True)
+plt.title('Correlation Matrix')
+plt.tight_layout()
+
+# Save the plot as a PNG file
+plot_filename = "correlation_matrix.png"
+plt.savefig(plot_filename)
+plt.close() # HACK
+
+# Declare result var
+result = { "type": "plot", "value": plot_filename }
+            ```
+            
+2025-06-04 11:57:48 [INFO] Executing Step 4: CachePopulation
+2025-06-04 11:57:48 [INFO] Executing Step 5: CodeCleaning
+2025-06-04 11:57:48 [INFO] Saving charts to e:\OneDrive\Pulpit\kodowanie\datascientist\exports\charts\temp_chart.png
+2025-06-04 11:57:48 [INFO] 
+Code running:
+```
+df = dfs[0]
+correlation_matrix = df.corr()
+plt.figure(figsize=(12, 10))
+sns.heatmap(correlation_matrix, annot=True, fmt='.2f', cmap='coolwarm', cbar=True)
+plt.title('Correlation Matrix')
+plt.tight_layout()
+plot_filename = 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'
+plt.savefig(plot_filename)
+plt.close()
+result = {'type': 'plot', 'value': plot_filename}
+        ```
+2025-06-04 11:57:48 [INFO] Executing Step 6: CodeExecution
+2025-06-04 11:57:48 [INFO] Executing Step 7: ResultValidation
+2025-06-04 11:57:48 [INFO] Answer: {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+2025-06-04 11:57:48 [INFO] Executing Step 8: ResultParsing
+2025-06-04 11:58:20 [INFO] Question: narysuj boxplot dla 'tempo', rozdziel na kobiety i mê¿czyzn, do not print the result, do not print the result
+2025-06-04 11:58:21 [INFO] Running PandasAI with openai LLM...
+2025-06-04 11:58:21 [INFO] Prompt ID: 7e665c68-1cea-4210-94ea-29a4cfbbf42b
+2025-06-04 11:58:21 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-06-04 11:58:21 [INFO] Executing Step 0: ValidatePipelineInput
+2025-06-04 11:58:21 [INFO] Executing Step 1: CacheLookup
+2025-06-04 11:58:21 [INFO] Executing Step 2: PromptGeneration
+2025-06-04 11:58:21 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj boxplot dla 'tempo', rozdziel na kobiety i mê¿czyzn, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-06-04 11:58:21 [INFO] Executing Step 3: CodeGenerator
+2025-06-04 11:58:31 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-04 11:58:31 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj boxplot dla 'tempo', rozdziel na kobiety i mê¿czyzn, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-06-04 11:58:31 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming dfs is already defined and contains the DataFrame
+df = dfs[0]
+
+# Filter out rows with NaN values in 'Tempo' or 'P³eæ'
+df_filtered = df.dropna(subset=['Tempo', 'P³eæ'])
+
+# Create a boxplot for 'Tempo' separated by 'P³eæ'
+plt.figure(figsize=(10, 6))
+df_filtered.boxplot(column='Tempo', by='P³eæ')
+plt.title('Boxplot of Tempo by Gender')
+plt.suptitle('')  # Remove the default suptitle to clean up the plot
+plt.xlabel('P³eæ')
+plt.ylabel('Tempo')
+
+# Save the plot as a PNG file
+plt.savefig('tempo_boxplot.png')
+plt.close() # HACK
+
+# Declare result variable
+result = { "type": "plot", "value": "tempo_boxplot.png" }
+            ```
+            
+2025-06-04 11:58:31 [INFO] Executing Step 4: CachePopulation
+2025-06-04 11:58:31 [INFO] Executing Step 5: CodeCleaning
+2025-06-04 11:58:31 [INFO] Saving charts to e:\OneDrive\Pulpit\kodowanie\datascientist\exports\charts\temp_chart.png
+2025-06-04 11:58:31 [INFO] 
+Code running:
+```
+df = dfs[0]
+df_filtered = df.dropna(subset=['Tempo', 'P³eæ'])
+plt.figure(figsize=(10, 6))
+df_filtered.boxplot(column='Tempo', by='P³eæ')
+plt.title('Boxplot of Tempo by Gender')
+plt.suptitle('')
+plt.xlabel('P³eæ')
+plt.ylabel('Tempo')
+plt.savefig('e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png')
+plt.close()
+result = {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+        ```
+2025-06-04 11:58:31 [INFO] Executing Step 6: CodeExecution
+2025-06-04 11:58:32 [INFO] Executing Step 7: ResultValidation
+2025-06-04 11:58:32 [INFO] Answer: {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+2025-06-04 11:58:32 [INFO] Executing Step 8: ResultParsing
+2025-06-04 11:59:00 [INFO] Question: narysuj boxplot dla 'tempo stabilnosc', rozdziel na kobiety i mê¿czyzn, do not print the result, do not print the result
+2025-06-04 11:59:00 [INFO] Running PandasAI with openai LLM...
+2025-06-04 11:59:00 [INFO] Prompt ID: 0f03269d-6c9f-440d-85b8-878c74ce8b8d
+2025-06-04 11:59:00 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-06-04 11:59:00 [INFO] Executing Step 0: ValidatePipelineInput
+2025-06-04 11:59:00 [INFO] Executing Step 1: CacheLookup
+2025-06-04 11:59:00 [INFO] Executing Step 2: PromptGeneration
+2025-06-04 11:59:00 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj boxplot dla 'tempo stabilnosc', rozdziel na kobiety i mê¿czyzn, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-06-04 11:59:00 [INFO] Executing Step 3: CodeGenerator
+2025-06-04 11:59:13 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-04 11:59:13 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj boxplot dla 'tempo stabilnosc', rozdziel na kobiety i mê¿czyzn, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-06-04 11:59:13 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Assuming dfs is already defined and contains the DataFrame
+df = dfs[0]
+
+# Filter out rows with NaN values in 'Tempo Stabilnoœæ' and 'P³eæ'
+df_filtered = df.dropna(subset=['Tempo Stabilnoœæ', 'P³eæ'])
+
+# Create a boxplot for 'Tempo Stabilnoœæ' separated by gender
+plt.figure(figsize=(10, 6))
+df_filtered.boxplot(column='Tempo Stabilnoœæ', by='P³eæ')
+plt.title('Boxplot of Tempo Stabilnoœæ by Gender')
+plt.suptitle('')  # Remove the default suptitle to clean up the plot
+plt.xlabel('P³eæ')
+plt.ylabel('Tempo Stabilnoœæ')
+
+# Save the plot as a PNG file
+plt.savefig('tempo_stabilnosc_boxplot.png')
+plt.close() # HACK
+plt.close()
+
+# Declare result var
+result = { "type": "plot", "value": "tempo_stabilnosc_boxplot.png" }
+            ```
+            
+2025-06-04 11:59:13 [INFO] Executing Step 4: CachePopulation
+2025-06-04 11:59:13 [INFO] Executing Step 5: CodeCleaning
+2025-06-04 11:59:13 [INFO] Saving charts to e:\OneDrive\Pulpit\kodowanie\datascientist\exports\charts\temp_chart.png
+2025-06-04 11:59:13 [INFO] 
+Code running:
+```
+df = dfs[0]
+df_filtered = df.dropna(subset=['Tempo Stabilnoœæ', 'P³eæ'])
+plt.figure(figsize=(10, 6))
+df_filtered.boxplot(column='Tempo Stabilnoœæ', by='P³eæ')
+plt.title('Boxplot of Tempo Stabilnoœæ by Gender')
+plt.suptitle('')
+plt.xlabel('P³eæ')
+plt.ylabel('Tempo Stabilnoœæ')
+plt.savefig('e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png')
+plt.close()
+plt.close()
+result = {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+        ```
+2025-06-04 11:59:13 [INFO] Executing Step 6: CodeExecution
+2025-06-04 11:59:13 [INFO] Executing Step 7: ResultValidation
+2025-06-04 11:59:13 [INFO] Answer: {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+2025-06-04 11:59:13 [INFO] Executing Step 8: ResultParsing
+2025-06-04 12:00:06 [INFO] Question: narysuj na³o¿one na siebie histogramy dla 'tempo stabilnoœæ', rozdziel ze wzglêdu na p³eæ, znormalizuj, dodaj medianê, do not print the result, do not print the result
+2025-06-04 12:00:06 [INFO] Running PandasAI with openai LLM...
+2025-06-04 12:00:06 [INFO] Prompt ID: b819e7e4-6c00-4e82-8516-6264cd503254
+2025-06-04 12:00:06 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-06-04 12:00:06 [INFO] Executing Step 0: ValidatePipelineInput
+2025-06-04 12:00:06 [INFO] Executing Step 1: CacheLookup
+2025-06-04 12:00:06 [INFO] Executing Step 2: PromptGeneration
+2025-06-04 12:00:06 [INFO] Using prompt: dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj na³o¿one na siebie histogramy dla 'tempo stabilnoœæ', rozdziel ze wzglêdu na p³eæ, znormalizuj, dodaj medianê, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-06-04 12:00:06 [INFO] Executing Step 3: CodeGenerator
+2025-06-04 12:00:25 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-04 12:00:25 [INFO] Prompt used:
+            dfs[0]:
+  name: null
+  description: null
+  type: pd.DataFrame
+  rows: 8950
+  columns: 27
+  schema:
+    fields:
+    - name: Miejsce
+      type: float64
+      samples:
+      - 1851.0
+      - 7064.0
+      - .nan
+      description: Klasyfikacja Open
+    - name: Numer startowy
+      type: int64
+      samples:
+      - 3361
+      - 2908
+      - 6992
+      description: Z jakim numerem startowym wystartowa³ zawodnik
+    - name: Imiê
+      type: object
+      samples:
+      - WIKTOR
+      - OLGA
+      - ARIEL
+    - name: Nazwisko
+      type: object
+      samples:
+      - KUNICKA
+      - NOCULAK
+      - URBANIK
+    - name: Miasto
+      type: object
+      samples:
+      - HENRYKÓW
+      - .nan
+      - NÜRNBERG
+    - name: Kraj
+      type: object
+      samples:
+      - .nan
+      - AUT
+      - ENG
+    - name: Dru¿yna
+      type: object
+      samples:
+      - .nan
+      - ADIDAS RUNNERS POZNAÑ
+      - BERGSON TEAM RUN
+      description: Nazwa dru¿yny
+    - name: P³eæ
+      type: object
+      samples:
+      - .nan
+      - K
+      - M
+    - name: P³eæ Miejsce
+      type: float64
+      samples:
+      - 620.0
+      - .nan
+      - 2586.0
+      description: Miejsce w kategorii p³ci
+    - name: Kategoria wiekowa
+      type: object
+      samples:
+      - .nan
+      - K50
+      - K20
+    - name: Kategoria wiekowa Miejsce
+      type: float64
+      samples:
+      - .nan
+      - 565.0
+      - 558.0
+      description: Miejsce w kategorii wiekowej
+    - name: Rocznik
+      type: float64
+      samples:
+      - 0.0
+      - 1979.0
+      - .nan
+      description: Rok urodzenia
+    - name: 5 km Czas
+      type: object
+      samples:
+      - 00:39:30
+      - 00:31:25
+      - .nan
+      description: Czas po przebiegniêciu 5 km
+    - name: 5 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 2201.0
+      - 7852.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 5 km
+    - name: 5 km Tempo
+      type: float64
+      samples:
+      - 5.953333333333333
+      - 6.086666666666667
+      - .nan
+      description: Tempo przebiegniêcia pierwszych 5 km, w minutach na kilometr
+    - name: 10 km Czas
+      type: object
+      samples:
+      - 00:37:07
+      - .nan
+      - 00:57:23
+      description: Czas po przebiegniêciu 10 km
+    - name: 10 km Miejsce Open
+      type: float64
+      samples:
+      - 6164.0
+      - .nan
+      - 2932.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 10 km
+    - name: 10 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 5.383333333333334
+      - 6.7733333333333325
+      description: Tempo przebiegniêcia od 6-10 km, w minutach na kilometr
+    - name: 15 km Czas
+      type: object
+      samples:
+      - 01:12:05
+      - .nan
+      - 01:08:56
+      description: Czas po przebiegniêciu 15 km
+    - name: 15 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 1008.0
+      - 4519.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 15 km
+    - name: 15 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 4.006666666666667
+      - 7.443333333333333
+      description: Tempo przebiegniêcia od 11-15 km, w minutach na kilometr
+    - name: 20 km Czas
+      type: object
+      samples:
+      - .nan
+      - 01:43:18
+      - 01:58:47
+      description: Czas po przebiegniêciu 20 km
+    - name: 20 km Miejsce Open
+      type: float64
+      samples:
+      - .nan
+      - 5346.0
+      - 2550.0
+      description: Miejsce w klasyfikacji Open po przebiegniêciu 20 km
+    - name: 20 km Tempo
+      type: float64
+      samples:
+      - .nan
+      - 7.026666666666667
+      - 8.66
+      description: Tempo przebiegniêcia od 16-20 km, w minutach na kilometr
+    - name: Tempo Stabilnoœæ
+      type: float64
+      samples:
+      - 0.0677999999999999
+      - 0.0812000000000001
+      - .nan
+      description: Stabilnoœæ tempa, im mniejsza wartoœæ tym bardziej stabilne tempo,
+        ujemna wartoœæ oznacza przyspieszenie, dodatnia spowolnienie
+    - name: Czas
+      type: object
+      samples:
+      - 01:36:33
+      - 01:40:19
+      - 01:54:42
+      description: Czas ca³kowity
+    - name: Tempo
+      type: float64
+      samples:
+      - 8.082484000948092
+      - 4.287745911353401
+      - .nan
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ narysuj na³o¿one na siebie histogramy dla 'tempo stabilnoœæ', rozdziel ze wzglêdu na p³eæ, znormalizuj, dodaj medianê, do not print the result, do not print the result
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-06-04 12:00:25 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Load the dataframe
+df = dfs[0]
+
+# Filter out rows with NaN values in 'Tempo Stabilnoœæ' and 'P³eæ'
+df_filtered = df.dropna(subset=['Tempo Stabilnoœæ', 'P³eæ'])
+
+# Separate data by gender
+male_data = df_filtered[df_filtered['P³eæ'] == 'M']['Tempo Stabilnoœæ']
+female_data = df_filtered[df_filtered['P³eæ'] == 'K']['Tempo Stabilnoœæ']
+
+# Plot histograms
+plt.figure(figsize=(10, 6))
+
+# Normalize the histograms
+bins = np.linspace(min(df_filtered['Tempo Stabilnoœæ']), max(df_filtered['Tempo Stabilnoœæ']), 30)
+plt.hist(male_data, bins=bins, alpha=0.5, label='Mê¿czyŸni', density=True)
+plt.hist(female_data, bins=bins, alpha=0.5, label='Kobiety', density=True)
+
+# Add median lines
+plt.axvline(male_data.median(), color='blue', linestyle='dashed', linewidth=1, label='Mediana Mê¿czyŸni')
+plt.axvline(female_data.median(), color='orange', linestyle='dashed', linewidth=1, label='Mediana Kobiety')
+
+# Add labels and legend
+plt.xlabel('Tempo Stabilnoœæ')
+plt.ylabel('Gêstoœæ')
+plt.title('Histogramy Tempo Stabilnoœæ wed³ug P³ci')
+plt.legend()
+
+# Save the plot
+plt.savefig("tempo_stabilnosc_histogram.png")
+plt.close() # HACK
+
+# Declare result var
+result = { "type": "plot", "value": "tempo_stabilnosc_histogram.png" }
+            ```
+            
+2025-06-04 12:00:25 [INFO] Executing Step 4: CachePopulation
+2025-06-04 12:00:25 [INFO] Executing Step 5: CodeCleaning
+2025-06-04 12:00:25 [INFO] Saving charts to e:\OneDrive\Pulpit\kodowanie\datascientist\exports\charts\temp_chart.png
+2025-06-04 12:00:25 [INFO] 
+Code running:
+```
+df = dfs[0]
+df_filtered = df.dropna(subset=['Tempo Stabilnoœæ', 'P³eæ'])
+male_data = df_filtered[df_filtered['P³eæ'] == 'M']['Tempo Stabilnoœæ']
+female_data = df_filtered[df_filtered['P³eæ'] == 'K']['Tempo Stabilnoœæ']
+plt.figure(figsize=(10, 6))
+bins = np.linspace(min(df_filtered['Tempo Stabilnoœæ']), max(df_filtered['Tempo Stabilnoœæ']), 30)
+plt.hist(male_data, bins=bins, alpha=0.5, label='Mê¿czyŸni', density=True)
+plt.hist(female_data, bins=bins, alpha=0.5, label='Kobiety', density=True)
+plt.axvline(male_data.median(), color='blue', linestyle='dashed', linewidth=1, label='Mediana Mê¿czyŸni')
+plt.axvline(female_data.median(), color='orange', linestyle='dashed', linewidth=1, label='Mediana Kobiety')
+plt.xlabel('Tempo Stabilnoœæ')
+plt.ylabel('Gêstoœæ')
+plt.title('Histogramy Tempo Stabilnoœæ wed³ug P³ci')
+plt.legend()
+plt.savefig('e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png')
+plt.close()
+result = {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+        ```
+2025-06-04 12:00:25 [INFO] Executing Step 6: CodeExecution
+2025-06-04 12:00:25 [INFO] Executing Step 7: ResultValidation
+2025-06-04 12:00:25 [INFO] Answer: {'type': 'plot', 'value': 'e:/OneDrive/Pulpit/kodowanie/datascientist/exports/charts/temp_chart.png'}
+2025-06-04 12:00:25 [INFO] Executing Step 8: ResultParsing
