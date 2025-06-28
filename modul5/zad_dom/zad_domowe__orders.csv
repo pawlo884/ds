@@ -1,0 +1,17 @@
+;ID klienta;Nazwa klienta;Email;Telefon;Nazwa firmy;Numer faktury;Data faktury;ID produktu;Nazwa produktu;Ilość;Cena
+0;3;Eric Moore;lejacob@example.org;923-681-4646;Firma XYZ;2;2024-05-25;7;router;3;48.0
+1;3;Eric Moore;lejacob@example.org;923-681-4646;Firma XYZ;2;2024-05-25;17;narty;5;55.0
+2;92;Valerie Stevens;xlowe@example.com;757-943-1579x98346;Firma XYZ;11;2024-05-02;5;słuchawki;1;40.0
+3;60;Troy Alexander;nturner@example.net;+1-212-349-3992x430;Firma XYZ;3;2024-05-19;16;ochraniacze;4;46.0
+4;78;William Velazquez;lisa25@example.net;(765)602-1572x949;Firma XYZ;4;2024-03-26;14;rolki;3;11.0
+5;33;Steven Jackson;jeremy07@example.com;481.258.2434;Firma XYZ;5;2024-07-23;10;pendrive;4;47.0
+6;33;Steven Jackson;jeremy07@example.com;481.258.2434;Firma XYZ;5;2024-07-23;2;laptop;2;47.0
+7;8;Ronald Callahan;audrey56@example.com;+1-727-668-2720x085;Firma XYZ;6;2024-03-14;5;słuchawki;4;40.0
+8;8;Ronald Callahan;audrey56@example.com;+1-727-668-2720x085;Firma XYZ;6;2024-03-14;16;ochraniacze;2;46.0
+9;4;Laura Beard;westdominique@example.org;(291)558-0966;Firma XYZ;7;2024-06-24;1;telewizor;2;85.0
+10;63;Alexis Johnson;campbellkatrina@example.org;(311)679-3346;Firma XYZ;8;2024-02-21;9;klawiatura;1;65.0
+11;63;Alexis Johnson;campbellkatrina@example.org;(311)679-3346;Firma XYZ;8;2024-02-21;7;router;1;48.0
+12;63;Alexis Johnson;campbellkatrina@example.org;(311)679-3346;Firma XYZ;8;2024-02-21;20;spodnie;1;14.0
+13;100;Johnny Franklin;bankslisa@example.org;(626)681-2730x71696;Firma XYZ;9;2024-01-26;20;spodnie;2;14.0
+14;44;Kimberly Marquez;joseph28@example.net;+1-688-249-5941x6260;Firma XYZ;10;2024-03-14;2;laptop;1;47.0
+15;44;Kimberly Marquez;joseph28@example.net;+1-688-249-5941x6260;Firma XYZ;10;2024-03-14;9;klawiatura;2;65.0
