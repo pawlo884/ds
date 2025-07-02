@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 st.title(":parrot: Papuga!")
 
 if "messages" not in st.session_state:
@@ -18,3 +19,9 @@ if prompt:
         {"role": "user", "content": prompt}
     )
 
+    # wyświetlanie odpowiedzi
+    with st.chat_message("assistant"):
+        response = f"Powtarzam: {prompt}"
+        st.markdown(response)
+
+    st.session_state['messages'].append({"role": "assistant", "content": response})
