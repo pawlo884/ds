@@ -3,6 +3,21 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import os
 
+model_pricing = {
+    "gpt-4o": {
+        "input_tokens": 5.00 / 1_000_000,  # per token
+        "output_tokens": 15.00 / 1_000_000,  # per token
+    },
+    "gpt-4o-mini": {
+        "input_tokens": 0.150 / 1_000_000,  # per token
+        "output_tokens": 0.600 / 1_000_000,  # per token
+    }
+}
+
+MODEL = "gpt-4o"
+USD_TO_PLN = 4.50
+PRICING = model_pricing[MODEL]
+
 env = load_dotenv()
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -11,28 +26,37 @@ st.title(":moneybag: Nasz GPT z pamięcią")
 
 
 def get_chatbot_response(prompt, memory):
-    messages=[
+    messages = [
         {
-            "role": "system", 
+            "role": "system",
             "content": """
             Bądź jak Jack Sparrow, odpowiadaj na pytania w sposób zwięzły i zrozumiały"""
         },
-        
+
     ]
-    
+    # dodaj wszystkie poprzednie wiadomości do historii
     for message in memory:
-        messages.append({"role": message["role"], "content": message["content"]})
+        messages.append(
+            {"role": message["role"], "content": message["content"]})
 
     messages.append({"role": "user", "content": prompt})
 
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model=MODEL,
         messages=messages
     )
+    usage = {}
+    if response.usage:
+        usage = {
+            "completion_tokens": response.usage.completion_tokens,
+            "prompt_tokens": response.usage.prompt_tokens,
+            "total_tokens": response.usage.total_tokens,
+        }
 
     return {
         "role": "assistant",
-        "content": response.choices[0].message.content
+        "content": response.choices[0].message.content,
+        "usage": usage,
     }
 
 
@@ -55,11 +79,24 @@ if prompt:
 
     # wyświetlanie odpowiedzi
     with st.chat_message("assistant"):
-        chatbot_message = get_chatbot_response(prompt, memory=st.session_state["messages"][-10:])
+        chatbot_message = get_chatbot_response(
+            prompt, memory=st.session_state["messages"][-10:])
         st.markdown(chatbot_message["content"])
 
     st.session_state['messages'].append(chatbot_message)
 
 with st.sidebar:
-    with st.expander("historia rozmowy"):
-        st.json(st.session_state.get("messages") or [])
+    total_cost = 0
+    for message in st.session_state["messages"]:
+        if "usage" in message:
+            total_cost += message["usage"]["prompt_tokens"] * \
+                PRICING["input_tokens"]
+            total_cost += message["usage"]["completion_tokens"] * \
+                PRICING["output_tokens"]
+
+    c0, c1 = st.columns(2)
+    with c0:
+        st.metric("Koszt rozmowy (USD)", f"{total_cost:.4f}")
+
+    with c1:
+        st.metric("Koszt rozmowy (PLN)", f"{total_cost * USD_TO_PLN:.4f}")
