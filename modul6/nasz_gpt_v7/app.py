@@ -5,6 +5,15 @@ import os
 import json
 from pathlib import Path
 
+DB_PATH = Path("db_prototyp")
+DB_CONVERSATIONS_PATH = DB_PATH / "conversations"
+
+
+if not DB_PATH.exists():
+    DB_PATH.mkdir()
+    DB_CONVERSATIONS_PATH.mkdir()
+
+
 model_pricing = {
     "gpt-4o": {
         "input_tokens": 5.00 / 1_000_000,  # per token
@@ -24,7 +33,7 @@ env = load_dotenv()
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-st.title(":floppy_disk: Nasz GPT z pamięcią")
+st.title(":classical_building: Nasz GPT")
 
 
 def get_chatbot_response(prompt, memory):

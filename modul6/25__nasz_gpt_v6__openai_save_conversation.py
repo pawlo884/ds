@@ -1,11 +1,11 @@
-import streamlit as st
-from openai import OpenAI
-from dotenv import load_dotenv
-import os
 import json
 from pathlib import Path
+import streamlit as st
+from openai import OpenAI
+from dotenv import dotenv_values
 
-model_pricing = {
+
+model_pricings = {
     "gpt-4o": {
         "input_tokens": 5.00 / 1_000_000,  # per token
         "output_tokens": 15.00 / 1_000_000,  # per token
@@ -15,34 +15,32 @@ model_pricing = {
         "output_tokens": 0.600 / 1_000_000,  # per token
     }
 }
-
 MODEL = "gpt-4o"
-USD_TO_PLN = 4.50
-PRICING = model_pricing[MODEL]
+USD_TO_PLN = 3.97
+PRICING = model_pricings[MODEL]
 
-env = load_dotenv()
+env = dotenv_values(".env")
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+openai_client = OpenAI(api_key=env["OPENAI_API_KEY"])
 
-st.title(":floppy_disk: Nasz GPT z pamięcią")
+st.title(":floppy_disk: NaszGPT pamięta rozmowę")
 
-
-def get_chatbot_response(prompt, memory):
+def chatbot_reply(user_prompt, memory):
+    # dodaj system message
     messages = [
         {
             "role": "system",
             "content": st.session_state["chatbot_personality"],
         },
-
     ]
-    # dodaj wszystkie poprzednie wiadomości do historii
+    # dodaj wszystkie wiadomości z pamięci
     for message in memory:
-        messages.append(
-            {"role": message["role"], "content": message["content"]})
+        messages.append({"role": message["role"], "content": message["content"]})
 
-    messages.append({"role": "user", "content": prompt})
+    # dodaj wiadomość użytkownika
+    messages.append({"role": "user", "content": user_prompt})
 
-    response = client.chat.completions.create(
+    response = openai_client.chat.completions.create(
         model=MODEL,
         messages=messages
     )
@@ -60,38 +58,33 @@ def get_chatbot_response(prompt, memory):
         "usage": usage,
     }
 
-
 if "messages" not in st.session_state:
     if Path("current_conversation.json").exists():
         with open("current_conversation.json", "r") as f:
-            chatbot_conversation = json.loads(f.read())
+            chatbot_conversation = json.load(f)
 
         st.session_state["messages"] = chatbot_conversation["messages"]
         st.session_state["chatbot_personality"] = chatbot_conversation["chatbot_personality"]
+
     else:
         st.session_state["messages"] = []
 
-for message in st.session_state['messages']:
+for message in st.session_state["messages"]:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-prompt = st.chat_input("Wpisz co")
+prompt = st.chat_input("O co chcesz spytać?")
 if prompt:
-    user_message = {"role": "user", "content": prompt}
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    st.session_state['messages'].append(
-        {"role": "user", "content": prompt}
-    )
+    st.session_state["messages"].append({"role": "user", "content": prompt})
 
-    # wyświetlanie odpowiedzi
     with st.chat_message("assistant"):
-        chatbot_message = get_chatbot_response(
-            prompt, memory=st.session_state["messages"][-10:])
-        st.markdown(chatbot_message["content"])
+        response = chatbot_reply(prompt, memory=st.session_state["messages"][-10:])
+        st.markdown(response["content"])
 
-    st.session_state['messages'].append(chatbot_message)
+    st.session_state["messages"].append({"role": "assistant", "content": response["content"], "usage": response["usage"]})
 
     with open("current_conversation.json", "w") as f:
         f.write(json.dumps({
@@ -101,26 +94,24 @@ if prompt:
 
 with st.sidebar:
     total_cost = 0
-    for message in st.session_state["messages"]:
+    for message in st.session_state.get("messages") or []:
         if "usage" in message:
-            total_cost += message["usage"]["prompt_tokens"] * \
-                PRICING["input_tokens"]
-            total_cost += message["usage"]["completion_tokens"] * \
-                PRICING["output_tokens"]
+            total_cost += message["usage"]["prompt_tokens"] * PRICING["input_tokens"]
+            total_cost += message["usage"]["completion_tokens"] * PRICING["output_tokens"]
 
     c0, c1 = st.columns(2)
     with c0:
-        st.metric("Koszt rozmowy (USD)", f"{total_cost:.4f}")
+        st.metric("Koszt rozmowy (USD)", f"${total_cost:.4f}")
 
     with c1:
         st.metric("Koszt rozmowy (PLN)", f"{total_cost * USD_TO_PLN:.4f}")
 
     st.session_state["chatbot_personality"] = st.text_area(
-        "Opisz osobowość chatbota",
+        "Opisz osobowość chatbota",
         max_chars=1000,
         height=200,
         value="""
 Jesteś pomocnikiem, który odpowiada na wszystkie pytania użytkownika.
 Odpowiadaj na pytania w sposób zwięzły i zrozumiały.
-    """.strip()
+        """.strip()
     )
