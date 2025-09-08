@@ -25,8 +25,6 @@ env = load_dotenv()
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-st.title(":classical_building: Nasz GPT")
-
 
 def get_chatbot_response(prompt, memory):
     messages = [
@@ -95,11 +93,14 @@ def load_current_conversation():
         with open(DB_CONVERSATIONS_PATH / f"{conversation_id}.json", "w") as f:
             f.write(json.dumps(conversation))
 
-        # która od razu staje się aktualną
+        # która od razu staje się aktualną
         with open(DB_PATH / "current.json", "w") as f:
             f.write(json.dumps({
                 "current_conversation_id": conversation_id,
             }))
+
+        # ładujemy konwersację do session_state
+        load_conversation_to_state(conversation)
 
     else:
         # sprawdzamy, która konwersacja jest aktualna
@@ -223,7 +224,7 @@ load_current_conversation()
 st.title(":classical_building: Nasz GPT")
 
 
-for message in st.session_state['messages']:
+for message in st.session_state.get('messages', []):
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
@@ -232,6 +233,8 @@ if prompt:
     with st.chat_message("user"):
         st.markdown(prompt)
 
+    if 'messages' not in st.session_state:
+        st.session_state['messages'] = []
     st.session_state['messages'].append(
         {"role": "user", "content": prompt}
     )
@@ -239,10 +242,13 @@ if prompt:
     # wyświetlanie odpowiedzi
     with st.chat_message("assistant"):
         chatbot_message = get_chatbot_response(
-            prompt, memory=st.session_state["messages"][-10:])
+            prompt, memory=st.session_state.get("messages", [])[-20:])
         st.markdown(chatbot_message["content"])
 
-    st.session_state['messages'].append("role": "assistant", "content": chatbot_message["content"], "usage": chatbot_message["usage"])
+    if 'messages' not in st.session_state:
+        st.session_state['messages'] = []
+    st.session_state['messages'].append(
+        {"role": "assistant", "content": chatbot_message["content"], "usage": chatbot_message["usage"]})
     save_current_conversation_messages()
 
 
@@ -265,7 +271,7 @@ with st.sidebar:
 
     st.session_state["name"] = st.text_input(
         "Nazwa konwersacji",
-        value=st.session_state["name"],
+        value=st.session_state.get("name", "Konwersacja 1"),
         key="new_conversation_name",
         on_change=save_current_conversation_name,
     )
@@ -274,7 +280,7 @@ with st.sidebar:
         "Opisz osobowość chatbota",
         max_chars=1000,
         height=200,
-        value=st.session_state["chatbot_personality"],
+        value=st.session_state.get("chatbot_personality", DEFAULT_PERSONALITY),
         key="new_chatbot_personality",
         on_change=save_current_conversation_personality,
     )
@@ -293,5 +299,5 @@ with st.sidebar:
             st.write(conversation["name"])
 
         with c1:
-            if st.button("załaduj", key=conversation["id"], disabled=conversation["id"] == st.session_state["id"]):
+            if st.button("załaduj", key=conversation["id"], disabled=conversation["id"] == st.session_state.get("id", 0)):
                 switch_conversation(conversation["id"])
