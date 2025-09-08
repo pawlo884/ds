@@ -23,7 +23,12 @@ PRICING = model_pricing[MODEL]
 
 env = load_dotenv()
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    st.error("Brak klucza API OpenAI. Sprawdź plik .env")
+    st.stop()
+
+client = OpenAI(api_key=api_key)
 
 
 def get_chatbot_response(prompt, memory):
@@ -108,11 +113,24 @@ def load_current_conversation():
             data = json.loads(f.read())
             conversation_id = data["current_conversation_id"]
 
-        # wczytujemy konwersację
-        with open(DB_CONVERSATIONS_PATH / f"{conversation_id}.json", "r") as f:
-            conversation = json.loads(f.read())
-
-        load_conversation_to_state(conversation)
+        # sprawdzamy czy plik konwersacji istnieje
+        conversation_file = DB_CONVERSATIONS_PATH / f"{conversation_id}.json"
+        if conversation_file.exists():
+            # wczytujemy konwersację
+            with open(conversation_file, "r") as f:
+                conversation = json.loads(f.read())
+            load_conversation_to_state(conversation)
+        else:
+            # jeśli plik konwersacji nie istnieje, tworzymy nową
+            conversation = {
+                "id": conversation_id,
+                "name": f"Konwersacja {conversation_id}",
+                "chatbot_personality": DEFAULT_PERSONALITY,
+                "messages": [],
+            }
+            with open(conversation_file, "w") as f:
+                f.write(json.dumps(conversation))
+            load_conversation_to_state(conversation)
 
 
 def save_current_conversation_messages():
