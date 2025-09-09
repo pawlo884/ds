@@ -1,0 +1,11 @@
+age;edu_level;fav_animals;fav_place;gender;hobby_art;hobby_books;hobby_movies;hobby_other;hobby_sport;hobby_video_games;industry;learning_pref_books;learning_pref_chatgpt;learning_pref_offline_courses;learning_pref_online_courses;learning_pref_personal_projects;learning_pref_teaching;learning_pref_teamwork;learning_pref_workshops;motivation_career;motivation_challenges;motivation_creativity_and_innovation;motivation_money_and_job;motivation_personal_growth;motivation_remote;sweet_or_salty;years_of_experience
+25-34;Wyższe;Psy;Nad wodą;0.0;0;0;1;0;0;1;IT;1;0;0;1;1;0;1;1;0;1;0;0;1;0;sweet;6-10
+35-44;Średnie;Koty;W górach;1.0;1;1;0;0;1;0;Edukacja;0;0;0;1;1;0;0;1;0;1;0;1;1;0;sweet;11-15
+45-54;Wyższe;Psy;W lesie;0.0;0;0;1;0;0;0;IT;1;0;0;1;1;0;1;1;0;1;0;0;1;0;salty;>=16
+18-24;Podstawowe;Brak ulubionych;W górach;1.0;0;0;0;0;1;1;IT;1;0;0;1;1;0;0;0;0;1;0;1;1;0;salty;0-2
+55-64;Wyższe;Koty i Psy;Nad wodą;0.0;1;0;1;0;1;0;Finanse;1;0;0;1;1;0;1;1;0;1;0;0;1;0;sweet;>=16
+25-34;Wyższe;Inne;W lesie;1.0;0;1;1;0;0;1;Marketing;0;0;0;1;1;0;1;1;0;1;0;1;1;0;sweet;3-5
+35-44;Średnie;Psy;Nad wodą;0.0;0;1;0;0;0;0;Produkcja;1;0;0;1;1;0;0;0;0;0;0;1;1;0;sweet;6-10
+45-54;Wyższe;Koty;W górach;1.0;0;1;1;0;1;0;IT;1;0;0;1;0;0;0;0;0;1;0;0;1;0;sweet;>=16
+25-34;Średnie;Psy;W górach;0.0;0;0;0;0;1;1;Transport;1;0;0;1;0;0;1;1;0;1;0;1;1;0;salty;0-2
+35-44;Wyższe;Brak ulubionych;Nad wodą;0.0;0;1;0;0;0;0;Finanse;1;0;0;1;1;0;1;1;0;1;0;0;0;0;sweet;>=16
