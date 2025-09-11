@@ -81,3 +81,4 @@ Jeśli masz problemy:
 2. Sprawdź połączenie internetowe
 3. Uruchom jako administrator
 4. Sprawdź logi błędów w terminalu
+run

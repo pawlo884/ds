@@ -26,3 +26,4 @@ echo "🛑 Aby zatrzymać aplikację, naciśnij Ctrl+C"
 echo
 
 streamlit run app.py
+

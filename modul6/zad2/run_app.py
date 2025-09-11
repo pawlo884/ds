@@ -45,3 +45,4 @@ if __name__ == "__main__":
         print("❌ Nie znaleziono pliku requirements.txt")
         print("💡 Uruchom: pip install streamlit pandas plotly numpy")
         print("🌐 Następnie uruchom: streamlit run app.py")
+
