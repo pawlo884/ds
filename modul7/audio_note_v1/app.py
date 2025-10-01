@@ -1,43 +1,11 @@
 import streamlit as st
 from audiorecorder import audiorecorder  # type: ignore
 from io import BytesIO
-from dotenv import dotenv_values
-from openai import OpenAI
 
-env = dotenv_values("../../.env")
-
-AUDIO_TRANSCRIPTION_MODEL = "whisper-1"
-
-
-@st.cache_resource
-def get_openai_client():
-    return OpenAI(api_key=env["OPENAI_API_KEY"])
-
-
-def transcribe_audio(audio_bytes):
-    openai_client = get_openai_client()
-    audio_file = BytesIO(audio_bytes)
-    audio_file.name = "audio.mp3"
-    transcript = openai_client.audio.transcriptions.create(
-        file=audio_file,
-        model=AUDIO_TRANSCRIPTION_MODEL,
-        response_format="verbose_json",
-    )
-    return transcript.text
-
-
-openai_client = get_openai_client()
-
-st.title("Audio Note v2")
+st.title("Audio Note v1")
 
 st.set_page_config(page_title="Audio Note v1",
                    page_icon=":microphone:", layout="centered")
-
-if "note_audio_bytes" not in st.session_state:
-    st.session_state["note_audio_bytes"] = None
-
-if "note_audio_text" not in st.session_state:
-    st.session_state["note_audio_text"] = ""
 
 note_audio = audiorecorder(
     start_prompt="Nagraj notatkę",
@@ -46,13 +14,5 @@ note_audio = audiorecorder(
 if note_audio:
     audio = BytesIO()
     note_audio.export(audio, format="mp3")
-    st.session_state["note_audio_bytes"] = audio.getvalue()
-    st.audio(st.session_state["note_audio_bytes"], format="audio/mp3")
-
-    if st.button("Transkrypcja"):
-        st.session_state["note_audio_text"] = transcribe_audio(
-            st.session_state["note_audio_bytes"])
-
-    if st.session_state["note_audio_text"]:
-        st.text_area(
-            "Transkrypcja", value=st.session_state["note_audio_text"], disabled=True, )
+    note_audio_bytes = audio.getvalue()
+    st.audio(note_audio_bytes, format="audio/mp3")
