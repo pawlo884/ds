@@ -1,3 +1,4 @@
+from typing import Any
 import streamlit as st
 from audiorecorder import audiorecorder  # type: ignore
 from io import BytesIO
@@ -20,9 +21,10 @@ EMBEDDING_DIM = 1536
 
 QDRANT_COLLECTION_NAME = "notes"
 
-title = "Audio Note v5"
+title = "Audio Note v6"
 
 st.title(title)
+add_tab, search_tab = st.tabs(["Dodaj notatkę", "Szukaj notatki"])
 
 # koniec zmiennych globalnych
 
@@ -98,18 +100,34 @@ def add_note_to_db(note_text):
     )
 
 
-def list_notes_from_db():
+def list_notes_from_db(search_query=None) -> list[Any]:
     qdrant_client = get_qdrant_client()
-    notes = qdrant_client.scroll(
-        collection_name=QDRANT_COLLECTION_NAME,
-        limit=10)[0]
-    result = []
-    for note in notes:
-        result.append({"text": note.payload["text"], "score": note.score})
-    return result
+    if not search_query:
+        notes = qdrant_client.scroll(
+            collection_name=QDRANT_COLLECTION_NAME,
+            limit=10)[0]
+        result = []
+        for record in notes:
+            if record.payload:
+                result.append(
+                    {"text": record.payload["text"], "score": None, })
+        return result
+
+    else:
+        notes = qdrant_client.query_points(
+            collection_name=QDRANT_COLLECTION_NAME,
+            query=get_embedding(text=search_query),
+            limit=10,
+        ).points
+        result = []
+        for record in notes:
+            if record.payload:
+                result.append(
+                    {"text": record.payload["text"], "score": record.score, })
+        return result
 
 
-### MAIN ###
+# MAIN
 
 
 if not st.session_state.get("openai_api_key"):
@@ -140,29 +158,41 @@ if "note_audio_text" not in st.session_state:
 
 assure_db_collection_exists()
 
-note_audio = audiorecorder(
-    start_prompt="Nagraj notatkę",
-    stop_prompt="Zatrzymaj nagrywanie",)
+with add_tab:
+    note_audio = audiorecorder(
+        start_prompt="Nagraj notatkę",
+        stop_prompt="Zatrzymaj nagrywanie",)
 
-if note_audio:
-    audio = BytesIO()
-    note_audio.export(audio, format="mp3")
-    st.session_state["note_audio_bytes"] = audio.getvalue()
-    current_md5 = md5(st.session_state["note_audio_bytes"]).hexdigest()
-    if st.session_state["note_audio_bytes_md5"] != current_md5:
-        st.session_state["note_audio_text"] = ""
-        st.session_state["note_audio_bytes_md5"] = current_md5
+    if note_audio:
+        audio = BytesIO()
+        note_audio.export(audio, format="mp3")
+        st.session_state["note_audio_bytes"] = audio.getvalue()
+        current_md5 = md5(st.session_state["note_audio_bytes"]).hexdigest()
+        if st.session_state["note_audio_bytes_md5"] != current_md5:
+            st.session_state["note_audio_text"] = ""
+            st.session_state["note_text"] = ""
+            st.session_state["note_audio_bytes_md5"] = current_md5
 
-    st.audio(st.session_state["note_audio_bytes"], format="audio/mp3")
+        st.audio(st.session_state["note_audio_bytes"], format="audio/mp3")
 
-    if st.button("Transkrypcja"):
-        st.session_state["note_audio_text"] = transcribe_audio(
-            st.session_state["note_audio_bytes"])
+        if st.button("Transkrypcja"):
+            st.session_state["note_audio_text"] = transcribe_audio(
+                st.session_state["note_audio_bytes"])
 
-    if st.session_state["note_audio_text"]:
-        st.session_state["note_text"] = st.text_area(
-            "Edytuj notatkę", value=st.session_state["note_audio_text"])
+        if st.session_state["note_audio_text"]:
+            st.session_state["note_text"] = st.text_area(
+                "Edytuj notatkę", value=st.session_state["note_audio_text"])
 
-    if st.session_state["note_text"] and st.button("Zapisz notatkę", disabled=not st.session_state["note_text"]):
-        add_note_to_db(note_text=st.session_state["note_text"])
-        st.toast("Notatka zapisana", icon="🎉")
+        if st.session_state["note_text"] and st.button("Zapisz notatkę", disabled=not st.session_state["note_text"]):
+            add_note_to_db(note_text=st.session_state["note_text"])
+            st.toast("Notatka zapisana", icon="🎉")
+
+
+with search_tab:
+    query = st.text_input("Wyszukaj notatkę")
+    if st.button("Szukaj"):
+        for note_item in list_notes_from_db(query):
+            with st.container(border=True):
+                st.markdown(note_item["text"])
+                if note_item["score"]:
+                    st.markdown(f':violet[Score: {note_item["score"]:.4f}]')
