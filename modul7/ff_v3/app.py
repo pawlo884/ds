@@ -3,9 +3,10 @@ import pandas as pd  # type: ignore
 from pycaret.clustering import load_model, predict_model
 import plotly.express as px  # type: ignore
 import json
+import os
 
 DATA = "welcome_survey_simple_v1.csv"
-MODEL_NAME = "welcome_survey_clustering_pipeline_v1"
+MODEL_NAME = "welcome_survey_clustering_pipeline_v1.pkl"
 CLUSTER_NAMES_AND_DESCRIPTIONS = "welcome_survey_cluster_names_and_descriptions_v1.json"
 
 
@@ -29,18 +30,25 @@ def convert_age_to_range(age):
 
 @st.cache_data
 def get_model():
-    return load_model(MODEL_NAME)
+    # Użyj pełnej ścieżki do pliku modelu
+    model_path = os.path.join(os.path.dirname(__file__), MODEL_NAME)
+    return load_model(model_path)
 
 
 @st.cache_data
 def get_cluster_names_and_descriptions():
-    return json.load(open(CLUSTER_NAMES_AND_DESCRIPTIONS, encoding='utf-8'))
+    # Użyj pełnej ścieżki do pliku JSON
+    json_path = os.path.join(os.path.dirname(
+        __file__), CLUSTER_NAMES_AND_DESCRIPTIONS)
+    return json.load(open(json_path, encoding='utf-8'))
 
 
 @st.cache_data
 def get_all_participants():
     model = get_model()
-    all_df = pd.read_csv(DATA, sep=";")
+    # Użyj pełnej ścieżki do pliku CSV
+    csv_path = os.path.join(os.path.dirname(__file__), DATA)
+    all_df = pd.read_csv(csv_path, sep=";")
     df_with_cluster = predict_model(model, data=all_df)
 
     return df_with_cluster
