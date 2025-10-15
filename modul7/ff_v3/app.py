@@ -6,7 +6,7 @@ import json
 import os
 
 DATA = "welcome_survey_simple_v1.csv"
-MODEL_NAME = "welcome_survey_clustering_pipeline_v1.pkl"
+MODEL_NAME = "welcome_survey_clustering_pipeline_v1"
 CLUSTER_NAMES_AND_DESCRIPTIONS = "welcome_survey_cluster_names_and_descriptions_v1.json"
 
 
@@ -30,7 +30,7 @@ def convert_age_to_range(age):
 
 @st.cache_data
 def get_model():
-    # Użyj pełnej ścieżki do pliku modelu
+    # Użyj pełnej ścieżki do pliku modelu (bez rozszerzenia .pkl, bo PyCaret je dodaje automatycznie)
     model_path = os.path.join(os.path.dirname(__file__), MODEL_NAME)
     return load_model(model_path)
 
